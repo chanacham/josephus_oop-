@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             NumSol = new Label();
             label2 = new Label();
             nSoldiers = new NumericUpDown();
@@ -110,10 +111,10 @@
             // 
             // pink_duck
             // 
-            pink_duck.Image = Properties.Resources.tiny_pink_duck;
+            pink_duck.Image = (Image)resources.GetObject("pink_duck.Image");
             pink_duck.Location = new Point(889, 12);
             pink_duck.Name = "pink_duck";
-            pink_duck.Size = new Size(82, 96);
+            pink_duck.Size = new Size(27, 37);
             pink_duck.TabIndex = 5;
             pink_duck.TabStop = false;
             pink_duck.Visible = false;
@@ -129,10 +130,10 @@
             // 
             // goose
             // 
-            goose.Image = Properties.Resources.shrunk_goose1;
+            goose.Image = (Image)resources.GetObject("goose.Image");
             goose.Location = new Point(710, 24);
             goose.Name = "goose";
-            goose.Size = new Size(55, 62);
+            goose.Size = new Size(35, 37);
             goose.TabIndex = 7;
             goose.TabStop = false;
             goose.Visible = false;

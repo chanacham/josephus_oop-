@@ -66,43 +66,41 @@ namespace JosephusGUI
 
         private void bGo_Click(object sender, EventArgs e)
         {
-            GoCountdown((int)nCount.Value, (int)nSoldiers.Value);
+            int index = 0;
+            GoCountdown((int)nCount.Value - 1, (int)nSoldiers.Value, index);
         }
 
-        private void GoCountdown(int nCount, int soldiers)
+        private void GoCountdown(int nCount, int soldiers, int index)
         {
-            List<Boolean> soldierStatus = new List<Boolean>(soldiers);// false is not killed, true is killed 
 
-            // keep going until n-1 ducks are dead, base case 
-            int remainingSoldiers = soldiers;
-            //position of sword 
-            int currentIndex = 0;
-            // count of starting position, % ducks  
-
-            // base case of 1 duck remaining  
-            if (remainingSoldiers == 1)
+            //base case of 1 remaining duck 
+            if (soldiersList.Count == 1)
             {
-                Console.WriteLine("Game over ");
+                soldiersList[0].Visible = false;
+                soldiersList[0].Image = goose.Image;
+                soldiersList[0].Visible = true;
+
                 return;
             }
 
-            //find the index where the first duck will become a goose 
-            currentIndex = ((currentIndex + nCount) % soldiers);
-
-            for (int i = 0; i < currentIndex; i++)
+            //general case of finding where the next goose is
+            index = ((index + nCount) % soldiersList.Count);
+            //showing all the ducks tapped while counting to the goose 
+            for (int i = 0; i < index; i++)
             {
-                soldiersList[i].Visible = true;
+                soldiersList[i].Visible = false;
                 soldiersList[i].Image = pink_duck.Image;
+                soldiersList[i].Visible = true;
             }
 
             // goose the duck at the end of the countdown 
-            soldierStatus[currentIndex] = true;
-            soldiersList[currentIndex].Visible = false;
-            soldiersList[currentIndex].Image = goose.Image;
-            remainingSoldiers--;
+            soldiersList[index].Visible = false;
+            soldiersList[index].Image = goose.Image;
+            soldiersList[index].Visible=true;
+            soldiersList.RemoveAt(index);
 
-            //recursive call for 1 less soldier
-            GoCountdown(nCount, remainingSoldiers);
+            //recursive call to find the goose with n-1 ducks 
+            GoCountdown(nCount, soldiersList.Count, index);
 
         }
 
