@@ -1,0 +1,36 @@
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\bin\Debug\net6.0-windows\JosephusGUI.exe
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\bin\Debug\net6.0-windows\JosephusGUI.deps.json
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\bin\Debug\net6.0-windows\JosephusGUI.runtimeconfig.json
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\bin\Debug\net6.0-windows\JosephusGUI.dll
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.csproj.AssemblyReference.cache
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.Form1.resources
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.Properties.Resources.resources
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.csproj.GenerateResource.cache
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.AssemblyInfoInputs.cache
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.AssemblyInfo.cs
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.csproj.CoreCompileInputs.cache
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.dll
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\refint\JosephusGUI.dll
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.pdb
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.genruntimeconfig.cache
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\ref\JosephusGUI.dll
+C:\Users\M C\source\repos\JosephusGUI\JosephusGUI\bin\Debug\net6.0-windows\JosephusGUI.pdb
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\bin\Debug\net6.0-windows\JosephusGUI.exe
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\bin\Debug\net6.0-windows\JosephusGUI.deps.json
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\bin\Debug\net6.0-windows\JosephusGUI.runtimeconfig.json
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\bin\Debug\net6.0-windows\JosephusGUI.dll
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\bin\Debug\net6.0-windows\JosephusGUI.pdb
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.csproj.AssemblyReference.cache
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.Form1.resources
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.Properties.Resources.resources
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.csproj.GenerateResource.cache
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.AssemblyInfoInputs.cache
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.AssemblyInfo.cs
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.csproj.CoreCompileInputs.cache
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.dll
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\refint\JosephusGUI.dll
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.pdb
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\JosephusGUI.genruntimeconfig.cache
+C:\Users\cbcha\Downloads\JosephusGUI\JosephusGUI\JosephusGUI\obj\Debug\net6.0-windows\ref\JosephusGUI.dll
