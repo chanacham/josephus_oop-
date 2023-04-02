@@ -67,10 +67,10 @@ namespace JosephusGUI
         private void bGo_Click(object sender, EventArgs e)
         {
             int index = 0;
-            GoCountdown((int)nCount.Value - 1, (int)nSoldiers.Value, index);
+            GoCountdown((int)nCount.Value - 1, index);
         }
 
-        private void GoCountdown(int nCount, int soldiers, int index)
+        private void GoCountdown(int nCount, int index)
         {
 
             //base case of 1 remaining duck 
@@ -86,21 +86,30 @@ namespace JosephusGUI
             //general case of finding where the next goose is
             index = ((index + nCount) % soldiersList.Count);
             //showing all the ducks tapped while counting to the goose 
-            for (int i = 0; i < index; i++)
+            for (int i = index; i < (nCount % soldiersList.Count); i++)
             {
-                soldiersList[i].Visible = false;
+                Thread.Sleep(1000);
+                // soldiersList[i].Visible = false;
                 soldiersList[i].Image = pink_duck.Image;
-                soldiersList[i].Visible = true;
+               // soldiersList[i].Visible = true;
+
+               
+                /*
+                soldiersList[i].Visible = false;
+                soldiersList[i].Image = yellow_duck.Image;
+                soldiersList[i].Visible = true;*/
             }
 
             // goose the duck at the end of the countdown 
             soldiersList[index].Visible = false;
             soldiersList[index].Image = goose.Image;
             soldiersList[index].Visible=true;
-            soldiersList.RemoveAt(index);
+            pnlBattleField.Controls.Remove(soldiersList.ElementAt(index));
+            soldiersList.Remove(soldiersList.ElementAt(index));
 
+            Thread.Sleep(index * 1000);
             //recursive call to find the goose with n-1 ducks 
-            GoCountdown(nCount, soldiersList.Count, index);
+            GoCountdown(nCount, index);
 
         }
 
