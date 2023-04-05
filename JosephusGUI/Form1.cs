@@ -72,6 +72,7 @@ namespace JosephusGUI
 
         private void GoCountdown(int nCount, int index)
         {
+            //KNOWN BUG: changing the images within the run of the algorithm does not work. 
 
             //base case of 1 remaining duck 
             if (soldiersList.Count == 1)
@@ -82,28 +83,26 @@ namespace JosephusGUI
 
                 return;
             }
-
-            //general case of finding where the next goose is
-            index = ((index + nCount) % soldiersList.Count);
-            //showing all the ducks tapped while counting to the goose 
+            
+            //count the ducks leading up to the goose 
             for (int i = index; i < (nCount % soldiersList.Count); i++)
             {
                 Thread.Sleep(1000);
-                // soldiersList[i].Visible = false;
-                soldiersList[i].Image = pink_duck.Image;
-               // soldiersList[i].Visible = true;
-
-               
-                /*
                 soldiersList[i].Visible = false;
-                soldiersList[i].Image = yellow_duck.Image;
-                soldiersList[i].Visible = true;*/
+                soldiersList[i].Image = pink_duck.Image;
+                soldiersList[i].Visible = true;
+
             }
+
+            //move the index to the duck about to be goosed
+            index = ((index + nCount) % soldiersList.Count);
 
             // goose the duck at the end of the countdown 
             soldiersList[index].Visible = false;
             soldiersList[index].Image = goose.Image;
             soldiersList[index].Visible=true;
+
+            //remove the goose so the recursive call will work 
             pnlBattleField.Controls.Remove(soldiersList.ElementAt(index));
             soldiersList.Remove(soldiersList.ElementAt(index));
 
