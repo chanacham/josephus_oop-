@@ -42,6 +42,7 @@ namespace JosephusGUI
         private void CreateSoldiers(int numSoldiers)
         {
             pnlBattleField.Controls.Clear();
+            soldiersList.Clear();
             for (int ns = 0; ns < numSoldiers; ns++)
             {
                 MakeSoldier(ns, numSoldiers);
@@ -52,6 +53,7 @@ namespace JosephusGUI
         {
             PictureBox soldier = new PictureBox();
             pnlBattleField.Controls.Add(soldier);
+            soldiersList.Add(soldier);
             soldier.Image = yellow_duck.Image;
             soldier.Visible = true;
             soldier.Size = new Size(SOLDIER_W, SOLDIER_H);
@@ -60,56 +62,83 @@ namespace JosephusGUI
             int xCord = (int)(CENTER + RADIUS * Math.Cos(radians));
             int yCord = (int)(CENTER - RADIUS * Math.Sin(radians));
             soldier.Location = new Point(xCord, yCord);
-
-            soldiersList.Add(soldier);
+           
         }
 
         private void bGo_Click(object sender, EventArgs e)
         {
             int index = 0;
-            GoCountdown((int)nCount.Value - 1, index);
+            GoCountdown((int)nCount.Value, index);
         }
 
-        private void GoCountdown(int nCount, int index)
+        private void GoCountdown(int nCount, int StartIndex)
         {
-            //KNOWN BUG: changing the images within the run of the algorithm does not work. 
 
             //base case of 1 remaining duck 
             if (soldiersList.Count == 1)
             {
-                soldiersList[0].Visible = false;
-                soldiersList[0].Image = goose.Image;
-                soldiersList[0].Visible = true;
+                TextBox textBox = new TextBox(); 
+                textBox.Text = "Last duck!!";
+                textBox.Visible = true; 
+                textBox.Location = new Point(CENTER, CENTER);
+                pnlBattleField.Controls.Add(textBox);
 
                 return;
             }
-            
-            //count the ducks leading up to the goose 
-            for (int i = index; i < (nCount % soldiersList.Count); i++)
-            {
-                Thread.Sleep(1000);
-                soldiersList[i].Visible = false;
-                soldiersList[i].Image = pink_duck.Image;
-                soldiersList[i].Visible = true;
 
+            //count the ducks leading up to the goose
+            int pinkLocation = StartIndex;
+            for (int pinkCount = 0; pinkCount < nCount; pinkCount++)
+            {
+                pinkLocation %= soldiersList.Count;
+
+                soldiersList[pinkLocation].Image = pink_duck.Image;
+                soldiersList[pinkLocation].Visible = true;
+                pnlBattleField.Refresh();
+
+                Thread.Sleep(1000);
+                soldiersList[pinkLocation].Image = yellow_duck.Image;
+                soldiersList[pinkLocation].Visible = true;
+                pnlBattleField.Refresh();
+
+                pinkLocation += 1;
+
+
+                Thread.Sleep(1000);
             }
 
             //move the index to the duck about to be goosed
-            index = ((index + nCount) % soldiersList.Count);
+            StartIndex = ((StartIndex + nCount) % soldiersList.Count);
 
             // goose the duck at the end of the countdown 
-            soldiersList[index].Visible = false;
-            soldiersList[index].Image = goose.Image;
-            soldiersList[index].Visible=true;
+            soldiersList[StartIndex].Image = goose.Image;
+            soldiersList[StartIndex].Visible=true;
+            pnlBattleField.Refresh();
 
-            //remove the goose so the recursive call will work 
-            pnlBattleField.Controls.Remove(soldiersList.ElementAt(index));
-            soldiersList.Remove(soldiersList.ElementAt(index));
 
-            Thread.Sleep(index * 1000);
+            Thread.Sleep(1000);
+           
+
+            //remove the goose 
+            pnlBattleField.Controls.Remove(soldiersList.ElementAt(StartIndex));
+            paintDeadGoose(soldiersList.ElementAt(StartIndex));
+            soldiersList.Remove(soldiersList.ElementAt(StartIndex));
+
+
             //recursive call to find the goose with n-1 ducks 
-            GoCountdown(nCount, index);
+            GoCountdown(nCount, StartIndex);
 
+        }
+
+        private void paintDeadGoose(PictureBox pictureBox)
+        {
+            PictureBox deadGoose = new PictureBox();
+            deadGoose.Image = goose.Image;
+            Point deadGooseLocation = new Point(pictureBox.Location.X, pictureBox.Location.Y); 
+
+            deadGoose.Location = deadGooseLocation;
+            deadGoose.Visible = true;
+            pnlBattleField.Controls.Add(deadGoose);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
